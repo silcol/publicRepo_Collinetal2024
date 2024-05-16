@@ -61,8 +61,8 @@ This folder has processed data used to test significance for the brain-to-behavi
 data_for_kmeans
 This folder has processed data related to the Kmeans for K = 2, K = 3, K = 4, K = 5, K = 5 with filtering for the top25 percent, K = 5 cluster 5 when comparing template event 2 to event 2, K = 5 cluster 5 when comparing template event 2 to event 3, K = 5 cluster 5 when comparing template event 3 to event 2, K = 5 cluster 5 when comparing template event 3 to event 3.
 
-data_for_rsa/brain_maps
+data_for_rsa_brain_maps
 This folder has processed data related to the RSA analyses in the form of nii files, one file for each of the 4 neural codes with all p-values throughout the brain and one file for each of the 4 neural codes with an fdr 0.05 threshold (saved inverted, i.e. 1 minus pvalue).
 
-data_for_rsa/timelines
+data_for_rsa_timelines
 This folder has processed data concerning the rsa violin plots for each of the 4 neural codes assessed in the study. Each csv file has neural similarity values TR-by-TR for each participants. Each file used either event2, event3 or event4 template to compare it to, and either for other-event/other-schema, other-event/same-schema, same-event/same-schema or same-event/other-schema. 
