@@ -12,18 +12,6 @@ This script calculates the within-subject brain (schema code, path code, rotated
 getSearchlightVectorRepresentation/run_job_tval.py
 This script utilizes the information in the representational similarity analysis violin plots expanded at each TR to generate the vectors of t-values for each searchlight which are then fed into the K-Means algorithm.
 
-kmeans/runClustering/tval/get_master_lists_tval.py
-This script prepares us for the K-Means algorithm by gathering together the outputs of the run_job_tval.py script which outputs a file per searchlight containing the vectors of t-values.
-
-kmeans/runClustering/tval/kmeans_clustering_tval.py
-This script runs the K-Means clustering algorithm over searchlights where each searchlight is represented by a vector of t-values.
-
-kmeans/run_visualization/tval/visualize_clustering_tval.py and kmeans/run_visualization/tval/visualize_clustering_tval_perS.py
-These scripts prepare csv files that can be used to visualize the results of the K-Means algorithm by averaging together the data for all the searchlights within a particular cluster so we can get cluster-average representational similarity analysis plots. The perS indicates that the script allows for visualizations that zoom in on a particular participant’s representational similarity analysis comparison values for the searchlights within a particular cluster found by K-Means.
-
-kmeans/silhoutte/tval/get_s_scores_sklearn_tval.py
-This script computes the silhouette scores (figure A4, A16) for each searchlight from the K-Means results.
-
 pvalues/pval_and_distill_part1/get_pvalue_each_searchlight.py
 This script computes the ROI p-values for each searchlight which is the result of a t-test asking whether a particular pattern is present in this searchlight’s representational similarity analysis comparisons that is associated with the codes we were looking for a priori.
 
@@ -39,14 +27,6 @@ These scripts are used to calculate the neural similarity timelines as used for 
 violinPlots/rsa/paperFigures.ipynb and paperFigures-GrandAverages.ipynb
 These scripts take the rsa neural similarity TR-by-TR timelines, averages over time for each event, and create 3-by-3 plots (paperFigures.ipynb) or within vs across-stage averages (paperFigures-GrandAverages.ipynb), separately for each of othe 4 neural codes in the study (schema, rotated, path, event). The grandAverages script as used for figure 5, 6, 7, and 8. The paperFigures.ipynb as used for figure A1, A2, A3.
 
-violinPlots/kmeans/paperFigures-kmeansFingerprints.ipynb and violinPlots/kmeans/paperFigures-kmeansFingerprints-filteredBySilhouette.ipynb
-These scripts take the kmeans data to generate the 3-by-3 violin plots for each of the clusters of the K-means analysis, and for each of the K values tested (K = 2, 3, 4, 5). The script ending with -filteredBySilhouette creates the violin plot for the second cluster of K = 5 for which we ran a separate version on the top 25 % as defined by the silhouette scores. Code used for figure A5, A7, A10, A12, A14. 
-
-violinPlots/kmeans/paperFigures-kmeansFingerprints-GrandAverages.ipynb and violinPlots/kmeans/paperFigures-kmeansFingerprints-GrandAverages-filteredBySilhouette.ipynb
-These scripts take the K-means data to generate within-stage vs across-stage violin plots for each of the clusters in the K-means analysis, and for each of the K values tested (K = 2, 3, 4, 5). The script ending with -filteredBySilhouette creates the violin plot for the second cluster of K = 5 for which we ran a separate version on the top 25 % as defined by the silhouette scores. Code used for figure A6, A8, A9, A11, A13.
-
-Figures 1, 2 and A15 are explanatory figures (not focused on data).
-
 Processed data
 
 data_for_all_behavTests
@@ -57,9 +37,6 @@ This folder has processed data used for the brain-to-behavior correlations (with
 
 data_for_brainToBehaviorCorrelation/nullDistributions
 This folder has processed data used to test significance for the brain-to-behavior correlations (all correlations to memory for details as well as to memory for rituals was compared against a null distribution), for each of the 4 neural codes assessed in the study.
-
-data_for_kmeans
-This folder has processed data related to the Kmeans for K = 2, K = 3, K = 4, K = 5, K = 5 with filtering for the top25 percent, K = 5 cluster 5 when comparing template event 2 to event 2, K = 5 cluster 5 when comparing template event 2 to event 3, K = 5 cluster 5 when comparing template event 3 to event 2, K = 5 cluster 5 when comparing template event 3 to event 3.
 
 data_for_rsa_brain_maps
 This folder has processed data related to the RSA analyses in the form of nii files, one file for each of the 4 neural codes with all p-values throughout the brain and one file for each of the 4 neural codes with an fdr 0.05 threshold (saved inverted, i.e. 1 minus pvalue).
